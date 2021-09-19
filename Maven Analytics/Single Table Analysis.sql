@@ -49,4 +49,4 @@ SELECT
 FROM
     film
 WHERE
-    special_features LIKE '%Behind The Scenes%'
+    special_features LIKE '%Behind The Scenes%';
