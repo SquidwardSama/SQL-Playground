@@ -50,3 +50,36 @@ FROM
     film
 WHERE
     special_features LIKE '%Behind The Scenes%';
+    
+  /*Issue: We want to know how long (retal_duration)  movies in the rental  store are typically rented for
+		Solution: We use COUNT and GROUP BY to find out the which rental duration(s) have the hoghest counts*/
+SELECT 
+    rental_duration AS 'Days Rented',
+    COUNT(film_id) AS 'Movies Rented'
+FROM
+    film
+GROUP BY rental_duration;
+
+/*Issue: We want to know which movie ratings (rating) are getting rented the longest, and how many movies are being rented at those durations.
+	Solution: We use COUNT and GROUP BY to slice our resutls by rating and duration*/
+SELECT 
+    rating AS 'Rating',
+    rental_duration AS 'Days Rented',
+    COUNT(film_id) AS 'Movies Rented'
+FROM
+    film
+GROUP BY rating , rental_duration
+ORDER BY rental_duration DESC , COUNT(film_id) DESC;
+
+/*Issue: We want to know if we charge more for movie rentals when the replacement cost is higher
+	Solution: We use COUNT and GROUP BY to slice results by replacement cost*/
+SELECT 
+    replacement_cost,
+    COUNT(film_id) AS 'Movies Rented',
+    MIN(rental_rate) AS 'Cheapest Rental',
+    MAX(rental_rate) AS 'Most Expensive Rental',
+    AVG(rental_rate) AS 'Average Rental'
+FROM
+    film
+GROUP BY replacement_cost
+ORDER BY replacement_cost DESC;
