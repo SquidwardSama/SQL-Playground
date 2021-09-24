@@ -83,3 +83,12 @@ FROM
     film
 GROUP BY replacement_cost
 ORDER BY replacement_cost DESC;
+
+/*Issue: We want to reach out to our customers with low rental numbers to find out how we can improve
+	Solution: Using COUNT, GROUP BY and HAVING, we can filter for customers whose rental numbers are below the threshold (15)*/
+    SELECT 
+    customer_id, COUNT(rental_id) AS 'Total Rentals'
+FROM
+    rental
+GROUP BY customer_id
+HAVING COUNT(rental_id) < 15;
