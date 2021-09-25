@@ -7,3 +7,4 @@ This directory holds SQL scripts generated during my time using the [Maven Analy
 
 [1]:	https://github.com/SquidwardSama/SQL-Playground/tree/main/Maven%20Analytics
 [2]:	https://www.mavenanalytics.io/
+
