@@ -128,5 +128,20 @@ SELECT
     END AS 'Store and Status'
 FROM
     customer;
-    
-    
+
+/*Issue: We want to know how many customers are active and inactive at our two store loations
+	Solution: We use CASE & COUNT to create a status summary for each store.*/
+
+SELECT 
+    store_id,
+    COUNT(CASE
+        WHEN active = 1 THEN active
+        ELSE NULL
+    END) AS 'Active Customers',
+    COUNT(CASE
+        WHEN active = 0 THEN active
+        ELSE NULL
+    END) AS 'Inactive Customers'
+FROM
+    customer
+GROUP BY store_id;
