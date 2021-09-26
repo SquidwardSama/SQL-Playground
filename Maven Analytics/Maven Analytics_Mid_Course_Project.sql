@@ -5,10 +5,12 @@ use mavenmovies;
 email addresses, and the store identification number where they work. 
 */ 
 
+```sql
 SELECT 
     first_name, last_name, email, store_id
 FROM
     staff;
+```    
 
 /*
 2.	We will need separate counts of inventory items held at each of your two stores. 
