@@ -1,6 +1,6 @@
 # Single Table Analysis
 
---Using the 'Big 6' of SQL Syntax to solve simple, single table, business problems.
+-- Using the 'Big 6' of SQL Syntax to solve simple, single table, business problems.
 
  *Issue: A change in management has occurred and we want to notify our customers via email*
 
